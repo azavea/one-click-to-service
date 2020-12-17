@@ -1,0 +1,26 @@
+{
+    "name": "One Click to Service",
+    "version": "1.0",
+    "description": "More easily navigate the AWS console by adding favorite services to the header on the page",
+    "manifest_version": 2,
+    "permissions": [
+        "activeTab"
+    ],
+    "icons": {
+        "16": "icon_16.png",
+        "48": "icon_48.png",
+        "128": "icon_128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://console.aws.amazon.com/*",
+                "https://*.aws.amazon.com/*"
+            ],
+            "run_at": "document_end",
+            "js": [
+                "updateHeader.js"
+            ]
+        }
+    ]
+}
